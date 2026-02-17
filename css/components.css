@@ -1,0 +1,249 @@
+.loading,
+.error {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+@media (min-width: 768px) {
+  .loading,
+  .error {
+    font-size: 1rem;
+  }
+}
+
+.error {
+  color: #c00;
+}
+
+.price {
+  font-weight: 600;
+  color: #217346;
+  font-size: 0.8rem;
+}
+
+@media (min-width: 768px) {
+  .price {
+    font-size: 1rem;
+  }
+}
+
+.prev-price {
+  color: #666;
+  font-size: 0.7rem;
+}
+
+@media (min-width: 768px) {
+  .prev-price {
+    font-size: 0.85em;
+  }
+}
+
+.graph {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .graph {
+    gap: 0.5rem;
+  }
+}
+
+.arrow {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .arrow {
+    font-size: 1.5rem;
+  }
+}
+
+.arrow.up {
+  color: #217346;
+}
+
+.arrow.down {
+  color: #c00;
+}
+
+.arrow.neutral {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+  .arrow.neutral {
+    font-size: 1.2rem;
+  }
+}
+
+.percent {
+  font-weight: 600;
+  font-size: 0.7rem;
+}
+
+@media (min-width: 768px) {
+  .percent {
+    font-size: 0.9em;
+  }
+}
+
+.percent.up {
+  color: #217346;
+}
+
+.percent.down {
+  color: #c00;
+}
+
+.history-btn {
+  padding: 0.25rem 0.5rem;
+  background: #2b579a;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 0.7rem;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .history-btn {
+    padding: 0.3rem 0.75rem;
+    font-size: 0.85rem;
+  }
+}
+
+.history-btn:hover {
+  background: #1e3f6f;
+}
+
+.history-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 2px solid #2b579a;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  width: 95%;
+  max-width: 600px;
+  max-height: 85vh;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .history-panel {
+    width: 90%;
+    max-height: 80vh;
+  }
+}
+
+.history-panel.hidden {
+  display: none;
+}
+
+.history-header {
+  background: #2b579a;
+  color: white;
+  padding: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .history-header {
+    padding: 1rem;
+  }
+}
+
+.history-header h2 {
+  font-size: 0.9rem;
+  margin: 0;
+  word-break: break-word;
+}
+
+@media (min-width: 768px) {
+  .history-header h2 {
+    font-size: 1.2rem;
+  }
+}
+
+#closeHistory {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  #closeHistory {
+    font-size: 1.5rem;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+#closeHistory:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.history-content {
+  overflow-y: auto;
+  overflow-x: auto;
+  flex: 1;
+  padding: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .history-content {
+    padding: 1rem;
+  }
+}
+
+.history-table {
+  width: 100%;
+  min-width: 300px;
+  font-size: 0.7rem;
+}
+
+@media (min-width: 768px) {
+  .history-table {
+    font-size: 0.9em;
+  }
+}
+
+.history-table thead {
+  position: sticky;
+  top: 0;
+  background: #e7e6e6;
+}
+
+.history-table td {
+  padding: 0.3rem;
+  word-break: break-word;
+}
+
+@media (min-width: 768px) {
+  .history-table td {
+    padding: 0.5rem;
+  }
+}
