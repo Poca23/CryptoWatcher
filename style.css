@@ -24,6 +24,27 @@ h1 {
   color: white;
   padding: 1rem;
   font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.25rem;
+    padding: 0.75rem;
+  }
+
+  .logo {
+    width: 50px;
+    height: 350px;
+  }
 }
 
 .controls {
