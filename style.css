@@ -1,0 +1,313 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #f0f0f0;
+  padding: 1rem;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border: 1px solid #d0d0d0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+h1 {
+  background: #2b579a;
+  color: white;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.controls {
+  padding: 1rem;
+  background: #fafafa;
+  border-bottom: 1px solid #d0d0d0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.selector,
+.currency-selector,
+.add-crypto {
+  flex: 1;
+  min-width: 200px;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+#checkboxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.5rem;
+}
+
+#checkboxes label {
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+#checkboxes input {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.currency-selector label {
+  display: inline-flex;
+  align-items: center;
+  font-weight: normal;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.currency-selector input {
+  margin-right: 0.3rem;
+  cursor: pointer;
+}
+
+.add-crypto input {
+  padding: 0.5rem;
+  border: 1px solid #d0d0d0;
+  margin-right: 0.5rem;
+  width: 120px;
+}
+
+.add-crypto button {
+  padding: 0.5rem 1rem;
+  background: #2b579a;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.add-crypto button:hover {
+  background: #1e3f6f;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #e7e6e6;
+}
+
+th,
+td {
+  padding: 0.75rem;
+  border: 1px solid #d0d0d0;
+  text-align: left;
+}
+
+tbody tr:hover {
+  background: #f5f5f5;
+}
+
+.loading,
+.error {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+.error {
+  color: #c00;
+}
+
+.price {
+  font-weight: 600;
+  color: #217346;
+}
+
+.prev-price {
+  color: #666;
+  font-size: 0.9em;
+}
+
+.graph {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.arrow {
+  font-size: 1.5rem;
+}
+
+.arrow.up {
+  color: #217346;
+}
+
+.arrow.down {
+  color: #c00;
+}
+
+.arrow.neutral {
+  color: #666;
+  font-size: 1.2rem;
+}
+
+.percent {
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+.percent.up {
+  color: #217346;
+}
+
+.percent.down {
+  color: #c00;
+}
+
+.history-btn {
+  padding: 0.3rem 0.75rem;
+  background: #2b579a;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  border-radius: 3px;
+}
+
+.history-btn:hover {
+  background: #1e3f6f;
+}
+
+.history-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 2px solid #2b579a;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.history-panel.hidden {
+  display: none;
+}
+
+.history-header {
+  background: #2b579a;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.history-header h2 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+#closeHistory {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#closeHistory:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.history-content {
+  overflow-y: auto;
+  flex: 1;
+  padding: 1rem;
+}
+
+.history-table {
+  width: 100%;
+  font-size: 0.9em;
+}
+
+.history-table thead {
+  position: sticky;
+  top: 0;
+  background: #e7e6e6;
+}
+
+.history-table td {
+  padding: 0.5rem;
+}
+
+.update-info {
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  color: #666;
+  text-align: center;
+  border-top: 1px solid #d0d0d0;
+  background: #fafafa;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.25rem;
+    padding: 0.75rem;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+
+  th,
+  td {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  #checkboxes {
+    grid-template-columns: 1fr;
+  }
+
+  .graph {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+
+  .history-panel {
+    width: 95%;
+    max-height: 90vh;
+  }
+
+  .history-table {
+    font-size: 0.8em;
+  }
+}

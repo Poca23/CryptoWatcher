@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Watcher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <h1>Crypto Watcher</h1>
+
+        <div class="controls">
+            <div class="selector">
+                <label>Sélectionner les cryptos :</label>
+                <div id="checkboxes"></div>
+            </div>
+
+            <div class="currency-selector">
+                <label>Devise :</label>
+                <label><input type="radio" name="currency" value="EUR" checked> EUR (€)</label>
+                <label><input type="radio" name="currency" value="USD"> USD ($)</label>
+            </div>
+
+            <div class="add-crypto">
+                <label>Ajouter une crypto :</label>
+                <input type="text" id="newCrypto" placeholder="Ex: XRP">
+                <button id="addBtn">Ajouter</button>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Crypto</th>
+                    <th>Prix précédent</th>
+                    <th>Prix actuel</th>
+                    <th>Graphique</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="cryptoTable">
+                <tr>
+                    <td colspan="5" class="loading">Chargement...</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="update-info">Mise à jour automatique toutes les 3 secondes</p>
+
+        <div id="historyPanel" class="history-panel hidden">
+            <div class="history-header">
+                <h2 id="historyTitle">Historique</h2>
+                <button id="closeHistory">✕</button>
+            </div>
+            <div class="history-content">
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>Date / Heure</th>
+                            <th>Prix</th>
+                            <th>Variation</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyTable"></tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
